@@ -3,19 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6582BF874F5E98515A914117 /* Pods_GBFitnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917F211D33DEF710EAAD287 /* Pods_GBFitnessTests.framework */; };
+		9750C7B057DF1C8CE0E2A36E /* Pods_GBFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC891D92FC63950BF455752 /* Pods_GBFitness.framework */; };
 		C1D875DC29371A1D00FA5B83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */; };
 		C1D875DE29371A1D00FA5B83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */; };
-		C1D875E029371A1D00FA5B83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DF29371A1D00FA5B83 /* ViewController.swift */; };
+		C1D875E029371A1D00FA5B83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DF29371A1D00FA5B83 /* MapViewController.swift */; };
 		C1D875E329371A1D00FA5B83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D875E129371A1D00FA5B83 /* Main.storyboard */; };
 		C1D875E529371A2100FA5B83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D875E429371A2100FA5B83 /* Assets.xcassets */; };
 		C1D875E829371A2100FA5B83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D875E629371A2100FA5B83 /* LaunchScreen.storyboard */; };
 		C1D875F329371A2200FA5B83 /* GBFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875F229371A2200FA5B83 /* GBFitnessTests.swift */; };
 		C1D875FD29371A2200FA5B83 /* GBFitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875FC29371A2200FA5B83 /* GBFitnessUITests.swift */; };
 		C1D875FF29371A2200FA5B83 /* GBFitnessUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875FE29371A2200FA5B83 /* GBFitnessUITestsLaunchTests.swift */; };
+		D3795BEB1EC3BDBAC91D80E3 /* Pods_GBFitness_GBFitnessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50F4898DD76D2F72A18859B /* Pods_GBFitness_GBFitnessUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +39,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C3C64F81E3C0593E1A5B617 /* Pods-GBFitness-GBFitnessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitness-GBFitnessUITests.release.xcconfig"; path = "Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests.release.xcconfig"; sourceTree = "<group>"; };
+		115BDCD9B4402DE47638C435 /* Pods-GBFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitness.debug.xcconfig"; path = "Target Support Files/Pods-GBFitness/Pods-GBFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		29E3EA029F4794FAF5D5B20C /* Pods-GBFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitnessTests.debug.xcconfig"; path = "Target Support Files/Pods-GBFitnessTests/Pods-GBFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		47EE61C2A7B91456586BE9F2 /* Pods-GBFitness-GBFitnessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitness-GBFitnessUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3113A3B86EE1419616AB6C9 /* Pods-GBFitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitnessTests.release.xcconfig"; path = "Target Support Files/Pods-GBFitnessTests/Pods-GBFitnessTests.release.xcconfig"; sourceTree = "<group>"; };
+		BDC891D92FC63950BF455752 /* Pods_GBFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D875D829371A1D00FA5B83 /* GBFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C1D875DF29371A1D00FA5B83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1D875DF29371A1D00FA5B83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C1D875E229371A1D00FA5B83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1D875E429371A2100FA5B83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1D875E729371A2100FA5B83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		C1D875F829371A2200FA5B83 /* GBFitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBFitnessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D875FC29371A2200FA5B83 /* GBFitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBFitnessUITests.swift; sourceTree = "<group>"; };
 		C1D875FE29371A2200FA5B83 /* GBFitnessUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBFitnessUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D3CA85B9E177AB6A464EFFF6 /* Pods-GBFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitness.release.xcconfig"; path = "Target Support Files/Pods-GBFitness/Pods-GBFitness.release.xcconfig"; sourceTree = "<group>"; };
+		D50F4898DD76D2F72A18859B /* Pods_GBFitness_GBFitnessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBFitness_GBFitnessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E917F211D33DEF710EAAD287 /* Pods_GBFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9750C7B057DF1C8CE0E2A36E /* Pods_GBFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6582BF874F5E98515A914117 /* Pods_GBFitnessTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3795BEB1EC3BDBAC91D80E3 /* Pods_GBFitness_GBFitnessUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				C1D875F129371A2200FA5B83 /* GBFitnessTests */,
 				C1D875FB29371A2200FA5B83 /* GBFitnessUITests */,
 				C1D875D929371A1D00FA5B83 /* Products */,
+				FFFA214768F2F741F4FB8DE8 /* Pods */,
+				FEE1122C079ED4141FE5B969 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +118,7 @@
 			children = (
 				C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */,
 				C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */,
-				C1D875DF29371A1D00FA5B83 /* ViewController.swift */,
+				C1D875DF29371A1D00FA5B83 /* MapViewController.swift */,
 				C1D875E129371A1D00FA5B83 /* Main.storyboard */,
 				C1D875E429371A2100FA5B83 /* Assets.xcassets */,
 				C1D875E629371A2100FA5B83 /* LaunchScreen.storyboard */,
@@ -127,6 +144,29 @@
 			path = GBFitnessUITests;
 			sourceTree = "<group>";
 		};
+		FEE1122C079ED4141FE5B969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDC891D92FC63950BF455752 /* Pods_GBFitness.framework */,
+				D50F4898DD76D2F72A18859B /* Pods_GBFitness_GBFitnessUITests.framework */,
+				E917F211D33DEF710EAAD287 /* Pods_GBFitnessTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFFA214768F2F741F4FB8DE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				115BDCD9B4402DE47638C435 /* Pods-GBFitness.debug.xcconfig */,
+				D3CA85B9E177AB6A464EFFF6 /* Pods-GBFitness.release.xcconfig */,
+				47EE61C2A7B91456586BE9F2 /* Pods-GBFitness-GBFitnessUITests.debug.xcconfig */,
+				0C3C64F81E3C0593E1A5B617 /* Pods-GBFitness-GBFitnessUITests.release.xcconfig */,
+				29E3EA029F4794FAF5D5B20C /* Pods-GBFitnessTests.debug.xcconfig */,
+				A3113A3B86EE1419616AB6C9 /* Pods-GBFitnessTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1D8760229371A2200FA5B83 /* Build configuration list for PBXNativeTarget "GBFitness" */;
 			buildPhases = (
+				C133E501FD464AFE5A015D66 /* [CP] Check Pods Manifest.lock */,
 				C1D875D429371A1C00FA5B83 /* Sources */,
 				C1D875D529371A1C00FA5B83 /* Frameworks */,
 				C1D875D629371A1C00FA5B83 /* Resources */,
+				BAA566F0924B85E5669E7E9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1D8760529371A2200FA5B83 /* Build configuration list for PBXNativeTarget "GBFitnessTests" */;
 			buildPhases = (
+				2281A37C8A7240DBB37E1479 /* [CP] Check Pods Manifest.lock */,
 				C1D875EA29371A2100FA5B83 /* Sources */,
 				C1D875EB29371A2100FA5B83 /* Frameworks */,
 				C1D875EC29371A2100FA5B83 /* Resources */,
@@ -169,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1D8760829371A2200FA5B83 /* Build configuration list for PBXNativeTarget "GBFitnessUITests" */;
 			buildPhases = (
+				4B84612041B853E6128D25ED /* [CP] Check Pods Manifest.lock */,
 				C1D875F429371A2200FA5B83 /* Sources */,
 				C1D875F529371A2200FA5B83 /* Frameworks */,
 				C1D875F629371A2200FA5B83 /* Resources */,
+				B235022A7CA9538DDB685922 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,7 +252,7 @@
 				};
 			};
 			buildConfigurationList = C1D875D329371A1C00FA5B83 /* Build configuration list for PBXProject "GBFitness" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -253,12 +298,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2281A37C8A7240DBB37E1479 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GBFitnessTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B84612041B853E6128D25ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GBFitness-GBFitnessUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B235022A7CA9538DDB685922 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAA566F0924B85E5669E7E9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness/Pods-GBFitness-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness/Pods-GBFitness-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBFitness/Pods-GBFitness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C133E501FD464AFE5A015D66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GBFitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C1D875D429371A1C00FA5B83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1D875E029371A1D00FA5B83 /* ViewController.swift in Sources */,
+				C1D875E029371A1D00FA5B83 /* MapViewController.swift in Sources */,
 				C1D875DC29371A1D00FA5B83 /* AppDelegate.swift in Sources */,
 				C1D875DE29371A1D00FA5B83 /* SceneDelegate.swift in Sources */,
 			);
@@ -432,19 +580,24 @@
 		};
 		C1D8760329371A2200FA5B83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 115BDCD9B4402DE47638C435 /* Pods-GBFitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CK743H6YQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBFitness/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GBFitness;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Необходимо отслеживание геопозиции";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,19 +614,24 @@
 		};
 		C1D8760429371A2200FA5B83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3CA85B9E177AB6A464EFFF6 /* Pods-GBFitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CK743H6YQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBFitness/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GBFitness;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Необходимо отслеживание геопозиции";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,6 +648,7 @@
 		};
 		C1D8760629371A2200FA5B83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29E3EA029F4794FAF5D5B20C /* Pods-GBFitnessTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +669,7 @@
 		};
 		C1D8760729371A2200FA5B83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3113A3B86EE1419616AB6C9 /* Pods-GBFitnessTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +690,7 @@
 		};
 		C1D8760929371A2200FA5B83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47EE61C2A7B91456586BE9F2 /* Pods-GBFitness-GBFitnessUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +709,7 @@
 		};
 		C1D8760A29371A2200FA5B83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C3C64F81E3C0593E1A5B617 /* Pods-GBFitness-GBFitnessUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
