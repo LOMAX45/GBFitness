@@ -83,7 +83,7 @@ class MapViewController: UIViewController {
     
     //MARK: - Private methods
     private func configureMap() {
-        let camera = GMSCameraPosition()
+        let camera = GMSCameraPosition(target: coordinate, zoom: 13)
         mapView.camera = camera
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
