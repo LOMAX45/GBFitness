@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6582BF874F5E98515A914117 /* Pods_GBFitnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917F211D33DEF710EAAD287 /* Pods_GBFitnessTests.framework */; };
 		9750C7B057DF1C8CE0E2A36E /* Pods_GBFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC891D92FC63950BF455752 /* Pods_GBFitness.framework */; };
+		C12252682939CE3000DF39B5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12252672939CE3000DF39B5 /* DataService.swift */; };
+		C122526A2939CF2D00DF39B5 /* RoutePathRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12252692939CF2D00DF39B5 /* RoutePathRealm.swift */; };
 		C1D875DC29371A1D00FA5B83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */; };
 		C1D875DE29371A1D00FA5B83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */; };
 		C1D875E029371A1D00FA5B83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DF29371A1D00FA5B83 /* MapViewController.swift */; };
@@ -45,6 +47,8 @@
 		47EE61C2A7B91456586BE9F2 /* Pods-GBFitness-GBFitnessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitness-GBFitnessUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3113A3B86EE1419616AB6C9 /* Pods-GBFitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBFitnessTests.release.xcconfig"; path = "Target Support Files/Pods-GBFitnessTests/Pods-GBFitnessTests.release.xcconfig"; sourceTree = "<group>"; };
 		BDC891D92FC63950BF455752 /* Pods_GBFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12252672939CE3000DF39B5 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		C12252692939CF2D00DF39B5 /* RoutePathRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePathRealm.swift; sourceTree = "<group>"; };
 		C1D875D829371A1D00FA5B83 /* GBFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */,
 				C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */,
 				C1D875DF29371A1D00FA5B83 /* MapViewController.swift */,
+				C12252672939CE3000DF39B5 /* DataService.swift */,
+				C12252692939CF2D00DF39B5 /* RoutePathRealm.swift */,
 				C1D875E129371A1D00FA5B83 /* Main.storyboard */,
 				C1D875E429371A2100FA5B83 /* Assets.xcassets */,
 				C1D875E629371A2100FA5B83 /* LaunchScreen.storyboard */,
@@ -179,6 +185,7 @@
 				C1D875D529371A1C00FA5B83 /* Frameworks */,
 				C1D875D629371A1C00FA5B83 /* Resources */,
 				BAA566F0924B85E5669E7E9B /* [CP] Copy Pods Resources */,
+				C379BBE4A94D872FF6B1E3B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +224,7 @@
 				C1D875F529371A2200FA5B83 /* Frameworks */,
 				C1D875F629371A2200FA5B83 /* Resources */,
 				B235022A7CA9538DDB685922 /* [CP] Copy Pods Resources */,
+				878BB396472D62D6F67D845B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -343,6 +351,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		878BB396472D62D6F67D845B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBFitness-GBFitnessUITests/Pods-GBFitness-GBFitnessUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B235022A7CA9538DDB685922 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,6 +424,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C379BBE4A94D872FF6B1E3B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness/Pods-GBFitness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBFitness/Pods-GBFitness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBFitness/Pods-GBFitness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -409,6 +451,8 @@
 				C1D875E029371A1D00FA5B83 /* MapViewController.swift in Sources */,
 				C1D875DC29371A1D00FA5B83 /* AppDelegate.swift in Sources */,
 				C1D875DE29371A1D00FA5B83 /* SceneDelegate.swift in Sources */,
+				C122526A2939CF2D00DF39B5 /* RoutePathRealm.swift in Sources */,
+				C12252682939CE3000DF39B5 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

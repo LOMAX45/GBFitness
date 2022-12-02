@@ -7,6 +7,7 @@ target 'GBFitness' do
 
   # Pods for GBFitness
   pod 'GoogleMaps'
+  pod 'RealmSwift'
 
   target 'GBFitnessTests' do
     inherit! :search_paths
