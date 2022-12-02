@@ -33,8 +33,6 @@ class MapViewController: UIViewController {
     //MARK: - IBActions
     @IBAction func goToLocation(_ sender: Any) {
         locationManager?.requestLocation()
-        guard let location = locationManager?.location else { return }
-        mapView.animate(toLocation: location.coordinate)
     }
     
     @IBAction func trackLocation(_ sender: Any) {
@@ -44,10 +42,6 @@ class MapViewController: UIViewController {
         route?.strokeWidth = 5
         routePath = GMSMutablePath()
         route?.map = mapView
-        locationManager?.requestLocation()
-        if let startPoint = locationManager?.location?.coordinate {
-            addMarker(startPoint)
-        }
         locationManager?.startUpdatingLocation()
         stopUpdateLocationButton.isHidden = false
     }
@@ -55,10 +49,9 @@ class MapViewController: UIViewController {
     @IBAction func stopUpdateLocation(_ sender: Any) {
         locationManager?.stopUpdatingLocation()
         stopUpdateLocationButton.isHidden = true
-        locationManager?.requestLocation()
-        if let startPoint = locationManager?.location?.coordinate {
-            addMarker(startPoint)
-        }
+        guard let routePath = routePath else { return }
+        addRouteToMap(routePath)
+        route?.map = nil
     }
     
     @IBAction func zoomPlus(_ sender: Any) {
@@ -71,27 +64,49 @@ class MapViewController: UIViewController {
     
     //MARK: - Private methods
     private func configureMap() {
-        let camera = GMSCameraPosition(target: coordinate, zoom: 13)
+        let camera = GMSCameraPosition()
         mapView.camera = camera
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
     }
     
-    func configureLocationManager() {
+    private func configureLocationManager() {
         locationManager = CLLocationManager()
         locationManager?.delegate = self
-        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        locationManager?.startMonitoringSignificantLocationChanges()
+        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager?.requestAlwaysAuthorization()
     }
     
-    private func addMarker(_ position: CLLocationCoordinate2D) {
+    private func addMarker(_ position: CLLocationCoordinate2D, _ icon: UIImage?) {
         let marker = GMSMarker(position: position)
-        marker.icon = UIImage(named: "pin")
+        marker.icon = icon
         marker.map = mapView
     }
     
     private func changeZoom(_ value: Float) {
         mapView.animate(toZoom: mapView.camera.zoom + value)
     }
+    
+    private func addRouteToMap(_ routePath: GMSMutablePath) {
+        let route = GMSPolyline()
+        route.strokeColor = .systemGreen
+        route.strokeWidth = 8
+        let startPoint = routePath.coordinate(at: 0)
+        let finishPoint = routePath.coordinate(at: routePath.count() - 1)
+        addMarker(startPoint, UIImage(named: "finish-flag"))
+        addMarker(finishPoint, UIImage(named: "finish-flag"))
+        route.path = routePath
+        route.map = mapView
+        
+        guard let pathForBounds = route.path else { return }
+        let routeBounds = GMSCoordinateBounds(path: pathForBounds)
+        let cameraUpdate = GMSCameraUpdate.fit(routeBounds)
+        mapView.animate(with: cameraUpdate)
+    }
+    
 }
 
 //MARK: - Extensions
@@ -102,6 +117,7 @@ extension MapViewController: GMSMapViewDelegate {
         if let manualMarker = manualMarker {
             manualMarker.position = coordinate
         } else {
+//            addMarker(coordinate, nil)
             let marker = GMSMarker(position: coordinate)
             marker.icon = UIImage(named: "pin")
             marker.map = mapView
@@ -119,7 +135,7 @@ extension MapViewController: CLLocationManagerDelegate {
         routePath?.add(location.coordinate)
         route?.path = routePath
         
-        let position = GMSCameraPosition(target: location.coordinate, zoom: 15)
+        let position = GMSCameraPosition(target: location.coordinate, zoom: 17)
         mapView.animate(to: position)
     }
     
