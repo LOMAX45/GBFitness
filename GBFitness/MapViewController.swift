@@ -8,20 +8,27 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import RealmSwift
 
 class MapViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var stopUpdateLocationButton: UIButton!
+    @IBOutlet weak var trackLocationButton: UIButton!
     
     // MARK: - Properties
     let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var manualMarker: GMSMarker?
+    var startMarker: GMSMarker?
+    var finishMarker: GMSMarker?
     var locationManager: CLLocationManager?
     var route: GMSPolyline?
+    var routeLast: GMSPolyline?
     var routePath: GMSMutablePath?
     var geocoder: CLGeocoder?
+    var dataService = DataService()
+    var isLocationUpdating = false
     
     //MARK: - Defaults methods
     override func viewDidLoad() {
@@ -43,15 +50,27 @@ class MapViewController: UIViewController {
         routePath = GMSMutablePath()
         route?.map = mapView
         locationManager?.startUpdatingLocation()
+        isLocationUpdating = true
+        trackLocationButton.isHidden = true
         stopUpdateLocationButton.isHidden = false
     }
     
+    @IBAction func showPreviousRoute(_ sender: Any) {
+        if isLocationUpdating == true {
+            let alert = UIAlertController(title: "СООБЩЕНИЕ",
+                                          message: "Отслеживание местоположения будет остановлено",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                self.stopUpdateLocation()
+            }))
+            self.present(alert, animated: true)
+        } else {
+            addRouteToMap()
+        }
+    }
+    
     @IBAction func stopUpdateLocation(_ sender: Any) {
-        locationManager?.stopUpdatingLocation()
-        stopUpdateLocationButton.isHidden = true
-        guard let routePath = routePath else { return }
-        addRouteToMap(routePath)
-        route?.map = nil
+        stopUpdateLocation()
     }
     
     @IBAction func zoomPlus(_ sender: Any) {
@@ -75,9 +94,30 @@ class MapViewController: UIViewController {
         locationManager?.delegate = self
         locationManager?.allowsBackgroundLocationUpdates = true
         locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
+//        locationManager?.startMonitoringSignificantLocationChanges()
         locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager?.requestAlwaysAuthorization()
+    }
+    
+    private func stopUpdateLocation() {
+        locationManager?.stopUpdatingLocation()
+        isLocationUpdating = false
+        stopUpdateLocationButton.isHidden = true
+        trackLocationButton.isHidden = false
+        guard let routePath = routePath else { return }
+        
+        let routePathRealm = RoutePathRealm()
+        routePathRealm.id = 1
+        routePathRealm.name = Date()
+        for item in 0 ..< routePath.count() {
+            let coordinate2D = Coordinate2D()
+            coordinate2D.latitude = routePath.coordinate(at: item).latitude
+            coordinate2D.longitude = routePath.coordinate(at: item).longitude
+            routePathRealm.coordinates.append(coordinate2D)
+        }
+        dataService.saveRouteData(routePathRealm)
+        route?.map = nil
+        addRouteToMap()
     }
     
     private func addMarker(_ position: CLLocationCoordinate2D, _ icon: UIImage?) {
@@ -86,22 +126,46 @@ class MapViewController: UIViewController {
         marker.map = mapView
     }
     
+    private func configureMarker(_ marker: GMSMarker) {
+        marker.icon = UIImage(named: "finish-flag")
+    }
+    
     private func changeZoom(_ value: Float) {
         mapView.animate(toZoom: mapView.camera.zoom + value)
     }
     
-    private func addRouteToMap(_ routePath: GMSMutablePath) {
-        let route = GMSPolyline()
-        route.strokeColor = .systemGreen
-        route.strokeWidth = 8
-        let startPoint = routePath.coordinate(at: 0)
-        let finishPoint = routePath.coordinate(at: routePath.count() - 1)
-        addMarker(startPoint, UIImage(named: "finish-flag"))
-        addMarker(finishPoint, UIImage(named: "finish-flag"))
-        route.path = routePath
-        route.map = mapView
+    private func addRouteToMap() {
         
-        guard let pathForBounds = route.path else { return }
+        routeLast?.map = nil
+        startMarker?.map = nil
+        finishMarker?.map = nil
+        let routePreviousPath = GMSMutablePath()
+        
+        do {
+            let realm = try Realm()
+            guard let routePathRealm = realm.objects(RoutePathRealm.self).first else { return }
+            for item in routePathRealm.coordinates {
+                routePreviousPath.add(CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude))
+            }
+        } catch {
+            print(error)
+        }
+        
+        routeLast = GMSPolyline()
+        routeLast?.strokeColor = .systemGreen
+        routeLast?.strokeWidth = 8
+        let startPoint = routePreviousPath.coordinate(at: 0)
+        let finishPoint = routePreviousPath.coordinate(at: routePreviousPath.count() - 1)
+        startMarker = GMSMarker(position: startPoint)
+        startMarker?.icon = UIImage(named: "finish-flag")
+        startMarker?.map = mapView
+        finishMarker = GMSMarker(position: finishPoint)
+        finishMarker?.icon = UIImage(named: "finish-flag")
+        finishMarker?.map = mapView
+        routeLast?.path = routePreviousPath
+        routeLast?.map = mapView
+        
+        guard let pathForBounds = routeLast?.path else { return }
         let routeBounds = GMSCoordinateBounds(path: pathForBounds)
         let cameraUpdate = GMSCameraUpdate.fit(routeBounds)
         mapView.animate(with: cameraUpdate)

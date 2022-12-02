@@ -23,10 +23,45 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Qq-p9F">
-                                <rect key="frame" x="304" y="794" width="100" height="48"/>
+                                <rect key="frame" x="10" y="794" width="394" height="48"/>
                                 <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-zf-wGD" userLabel="stopUpdateLocation">
+                                        <rect key="frame" x="-48" y="0.0" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="AZv-Pk-ZYe"/>
+                                            <constraint firstAttribute="height" constant="48" id="LaO-0x-pja"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
+                                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="stopUpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhA-Bb-uVU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97U-vd-cU3" userLabel="showPrevRoute">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Nh4-4V-ooe"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Последний маршрут" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showPreviousRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x7F-LI-kH0"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaF-gv-mh7" userLabel="trackLocationButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="294" y="0.0" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="drr-32-m9K"/>
                                             <constraint firstAttribute="width" constant="48" id="hAb-3Y-4UR"/>
@@ -42,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2w-D0-vuk" userLabel="goToButton">
-                                        <rect key="frame" x="52" y="0.0" width="48" height="48"/>
+                                        <rect key="frame" x="346" y="0.0" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="rFy-eL-xC4"/>
                                             <constraint firstAttribute="width" constant="48" id="vjV-ox-asV"/>
@@ -99,35 +134,16 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-zf-wGD" userLabel="stopUpdateLocation">
-                                <rect key="frame" x="20" y="794" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="AZv-Pk-ZYe"/>
-                                    <constraint firstAttribute="height" constant="48" id="LaO-0x-pja"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
-                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="stopUpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhA-Bb-uVU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vT0-zf-wGD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1cP-Pc-k3F"/>
                             <constraint firstItem="Gf9-Hb-EgW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3tk-ta-Cpu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j40-Qq-p9F" secondAttribute="bottom" constant="20" id="BSv-Dz-FhX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j40-Qq-p9F" secondAttribute="trailing" constant="10" id="S47-aH-Iok"/>
                             <constraint firstItem="Gf9-Hb-EgW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VrK-kW-hZm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gf9-Hb-EgW" secondAttribute="bottom" id="gsM-4Y-bll"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vT0-zf-wGD" secondAttribute="bottom" constant="20" id="gv2-el-14U"/>
+                            <constraint firstItem="j40-Qq-p9F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iJL-Sb-PQQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gf9-Hb-EgW" secondAttribute="trailing" id="kd6-qb-WpK"/>
                             <constraint firstItem="aYD-J4-0cI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kie-fl-erU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aYD-J4-0cI" secondAttribute="trailing" constant="10" id="soz-Mm-TQr"/>
@@ -136,11 +152,12 @@
                     <connections>
                         <outlet property="mapView" destination="Gf9-Hb-EgW" id="Zf2-kk-woN"/>
                         <outlet property="stopUpdateLocationButton" destination="vT0-zf-wGD" id="9d7-gW-mMy"/>
+                        <outlet property="trackLocationButton" destination="XaF-gv-mh7" id="aFG-eo-oeZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="45"/>
+            <point key="canvasLocation" x="832" y="-183"/>
         </scene>
     </scenes>
     <resources>
