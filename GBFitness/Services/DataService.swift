@@ -21,4 +21,15 @@ class DataService {
         }
     }
     
+    func saveUser (_ user: User) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(user, update: .modified)
+            try realm.commitWrite()
+        } catch {
+            print("ERROR:--> \(error)")
+        }
+    }
+    
 }
