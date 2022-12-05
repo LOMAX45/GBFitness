@@ -17,6 +17,9 @@ class MapViewController: UIViewController {
     @IBOutlet weak var stopUpdateLocationButton: UIButton!
     @IBOutlet weak var trackLocationButton: UIButton!
     
+    //MARK: - Coordinator properties
+    var onLogin: (() -> Void)?
+    
     // MARK: - Properties
     let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var manualMarker: GMSMarker?
@@ -79,6 +82,10 @@ class MapViewController: UIViewController {
     
     @IBAction func zoomMinus(_ sender: Any) {
         changeZoom(-0.5)
+    }
+    @IBAction func logoutTapped(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isLogin")
+        onLogin?()
     }
     
     //MARK: - Private methods
