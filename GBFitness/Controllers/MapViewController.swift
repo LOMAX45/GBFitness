@@ -9,6 +9,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import RealmSwift
+import RxSwift
 
 class MapViewController: UIViewController {
     
@@ -21,11 +22,12 @@ class MapViewController: UIViewController {
     var onLogin: (() -> Void)?
     
     // MARK: - Properties
+    let disposedBag = DisposeBag()
+    let locationManager = LocationManager.instance
     let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var manualMarker: GMSMarker?
     var startMarker: GMSMarker?
     var finishMarker: GMSMarker?
-    var locationManager: CLLocationManager?
     var route: GMSPolyline?
     var routeLast: GMSPolyline?
     var routePath: GMSMutablePath?
@@ -42,7 +44,7 @@ class MapViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func goToLocation(_ sender: Any) {
-        locationManager?.requestLocation()
+        locationManager.requestLocation()
     }
     
     @IBAction func trackLocation(_ sender: Any) {
@@ -52,7 +54,7 @@ class MapViewController: UIViewController {
         route?.strokeWidth = 5
         routePath = GMSMutablePath()
         route?.map = mapView
-        locationManager?.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         isLocationUpdating = true
         trackLocationButton.isHidden = true
         stopUpdateLocationButton.isHidden = false
@@ -97,17 +99,20 @@ class MapViewController: UIViewController {
     }
     
     private func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-//        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager?.requestAlwaysAuthorization()
+        locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard let location = location else { return }
+                self?.routePath?.add(location.coordinate)
+                self?.route?.path = self?.routePath
+                let position = GMSCameraPosition(target: location.coordinate, zoom: 17)
+                self?.mapView.animate(to: position)
+            }.disposed(by: disposedBag)
     }
     
     private func stopUpdateLocation() {
-        locationManager?.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         isLocationUpdating = false
         stopUpdateLocationButton.isHidden = true
         trackLocationButton.isHidden = false
@@ -188,30 +193,12 @@ extension MapViewController: GMSMapViewDelegate {
         if let manualMarker = manualMarker {
             manualMarker.position = coordinate
         } else {
-//            addMarker(coordinate, nil)
             let marker = GMSMarker(position: coordinate)
             marker.icon = UIImage(named: "pin")
             marker.map = mapView
             self.manualMarker = marker
         }
         print(coordinate)
-    }
-    
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        routePath?.add(location.coordinate)
-        route?.path = routePath
-        
-        let position = GMSCameraPosition(target: location.coordinate, zoom: 17)
-        mapView.animate(to: position)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
     
 }
