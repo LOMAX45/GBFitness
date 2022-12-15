@@ -7,13 +7,18 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
-    //MARK: - IBOutlets
+    //MARK: - Properties
+    let disposedBag = DisposeBag()
     
+    //MARK: - IBOutlets
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     //MARK: - Coordinator properties
     var onRegister: (() -> Void)?
@@ -45,7 +50,21 @@ class LoginViewController: UIViewController {
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureLoginBindings()
+    }
+    
+    func configureLoginBindings () {
+        Observable
+            .combineLatest(
+                loginField.rx.text,
+                passwordField.rx.text
+            )
+            .map { login, password in
+                return !(login ?? "").isEmpty && !(password ?? "").isEmpty
+            }
+            .bind { [weak loginButton] inputFields in
+                loginButton?.isEnabled = inputFields
+            }.disposed(by: disposedBag)
     }
     
     //MARK: - Private methods

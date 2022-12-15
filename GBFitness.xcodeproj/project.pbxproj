@@ -19,6 +19,7 @@
 		C12BEDA7293B9FEE00A3BCDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12BEDA6293B9FEE00A3BCDE /* User.swift */; };
 		C12BEDAC293BA92F00A3BCDE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12BEDAB293BA92F00A3BCDE /* LoginViewController.swift */; };
 		C12BEDAE293BA95400A3BCDE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12BEDAD293BA95400A3BCDE /* RegisterViewController.swift */; };
+		C12E55A3294909F20011BA94 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E55A2294909F20011BA94 /* LocationManager.swift */; };
 		C1D875DC29371A1D00FA5B83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */; };
 		C1D875DE29371A1D00FA5B83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */; };
 		C1D875E029371A1D00FA5B83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D875DF29371A1D00FA5B83 /* MapViewController.swift */; };
@@ -65,6 +66,7 @@
 		C12BEDA6293B9FEE00A3BCDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C12BEDAB293BA92F00A3BCDE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C12BEDAD293BA95400A3BCDE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C12E55A2294909F20011BA94 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C1D875D829371A1D00FA5B83 /* GBFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D875DB29371A1D00FA5B83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D875DD29371A1D00FA5B83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				C12252672939CE3000DF39B5 /* DataService.swift */,
+				C12E55A2294909F20011BA94 /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				C104F341293C7BC600968B78 /* AuthCoordinator.swift in Sources */,
 				C12BEDA7293B9FEE00A3BCDE /* User.swift in Sources */,
 				C1D875DE29371A1D00FA5B83 /* SceneDelegate.swift in Sources */,
+				C12E55A3294909F20011BA94 /* LocationManager.swift in Sources */,
 				C104F343293C84C700968B78 /* MapCoordinator.swift in Sources */,
 				C122526A2939CF2D00DF39B5 /* RoutePathRealm.swift in Sources */,
 				C12252682939CE3000DF39B5 /* DataService.swift in Sources */,
